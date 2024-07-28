@@ -1,0 +1,126 @@
+.chat-overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.59);
+  z-index: 1000;
+  transition: opacity 300ms ease-in-out;
+}
+
+.chat-overlay.visible {
+  opacity: 1; /* Fully visible when the class 'visible' is added */
+}
+
+.chat-overlay.hidden {
+  opacity: 0; /* Fully visible when the class 'visible' is added */
+}
+
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  width: 45rem;
+  height: 100vh;
+  box-sizing: border-box;
+  background-color: var(--primary);
+  margin-left: auto;
+  padding: 1.8rem 1.5rem;
+  animation: slideIn 200ms forwards;
+  transform: translateX(100%);
+}
+
+.chat-container.visible {
+  animation: slideIn 300ms forwards;
+}
+
+.chat-container.hidden {
+  animation: slideOut 300ms forwards;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+.chat-container h5 {
+  margin: 0px;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: #6a6a6a;
+}
+
+.chat__message-container {
+  text-decoration: none;
+  list-style-type: none;
+  flex-grow: 1;
+  overflow-y: scroll;
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.chat__message-container li {
+  margin: 0.5rem 0rem;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--secondary);
+  overflow-y: scroll;
+}
+
+.chat__message-container li span {
+  color: #6a6a6a;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.chat__message-container li p {
+  color: white;
+  font-size: 0.9rem;
+}
+
+.chat__text-bar {
+  margin-top: auto;
+  display: block;
+  height: 3.5rem;
+}
+
+.chat__text-bar input {
+  display: block;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  border: 2px solid #2e2e2e;
+  background-color: var(--primary);
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0 3.5rem 0 1rem;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24' viewBox='0 -960 960 960' width='24'%3E%3Cpath fill='%236a6a6a' d='M80-80v-720q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240H240L80-80Z'/%3E%3C/svg%3E");
+  background-size: 1.4rem;
+  background-repeat: no-repeat;
+  background-position: calc(100% - 1rem) center;
+  color: white;
+}
+
+.chat__text-bar input:focus {
+  outline: 3px solid var(--green);
+}

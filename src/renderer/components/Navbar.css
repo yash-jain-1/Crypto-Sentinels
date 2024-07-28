@@ -1,0 +1,77 @@
+.navbar-container {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+  padding: 1rem;
+}
+
+.navbar {
+  z-index: 1;
+  /* padding-left: 2rem;
+  padding-right: 2rem; */
+  display: block;
+  background-color: var(--primary);
+  border-radius: 1rem;
+  border: 2px solid #2e2e2e;
+  width: 16rem;
+  height: calc(100vh - 2rem);
+  margin-top: -2rem;
+}
+
+.navbar__header {
+  font-size: 1.2rem;
+  font-weight: 300;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  letter-spacing: 2.88px;
+}
+
+/* .navbar__divider {
+  border-top: 1px solid #e0e1e2;
+} */
+
+.navbar__button-container {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+}
+
+.navbar__button {
+  padding-top: 1rem;
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
+  padding-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  margin-left: 1.5rem;
+  padding-left: 1rem;
+  /* margin-left: 2rem; */
+  width: calc(100% - 4rem);
+  border-radius: 0.7rem;
+  text-decoration: none;
+  color: white;
+  /* background-color: grey; */
+  transition: all 0.2s ease-in;
+}
+
+.navbar__button:hover {
+  background-color: var(--secondary);
+}
+
+.navbar__button-text {
+  padding-left: 1rem;
+}
+
+.navbar__button-icon {
+  height: 100%;
+  aspect-ratio: 1;
+  background-color: #302f2f;
+  padding: 0.5rem;
+  border-radius: 0.4rem;
+}
+
+.navbar__button__selected {
+  background-color: var(--secondary);
+}
